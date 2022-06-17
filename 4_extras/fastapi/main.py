@@ -1,21 +1,18 @@
-from flask import Flask, jsonify, request
+from fastapi import FastAPI
+from pydantic import BaseModel
 
-app = Flask(__name__)
-
-
-@app.route('/hello', methods=['GET', 'POST'])
-def hello():
-    if request.method == 'GET':
-        data = {"data": "Hello World"}
-        return jsonify(data)
-    elif request.method == 'POST':
-        content_type = request.headers.get('Content-Type')
-        if content_type == 'application/json':
-            json = request.json
-            data = {"data": f"Hello World {json.get('name', '')} !"}
-            return jsonify(data)
+app = FastAPI()
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+class Person(BaseModel):
+    name: str
 
+
+@app.get("/hello")
+async def root():
+    return {"message": "Hello World"}
+
+
+@app.post("/hello")
+async def root(person: Person):
+    return {"message": f"Hello World {person.name}"}
