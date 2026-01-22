@@ -26,5 +26,5 @@
    - [Lesson 1](3_python-advanced/lesson_1.ipynb) - Functional programming
    - [Lesson 2](3_python-advanced/lesson_2) - Unit Test
    - [Lesson 3](3_python-advanced/lesson_3) - Asynchrony
-   - [Lesson 4](3_python-advanced/lesson_4) - Boolean Operator
+   - [Lesson 4](3_python-advanced/lesson_4) - Scraping
    - [Lesson 5](3_python-advanced/lesson_5.py) - "Strong Typing"
